@@ -1,0 +1,32 @@
+doctype
+html
+  head
+    title Edit Issue
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h3 Edit Issue
+    #container
+      form(id='form', method='post', action='/issue/edit/#{issue.id}')
+        label(for='description') Desciption:
+        textarea(rows=5,cols=80,name='description' ) #{issue.description}
+        <br/><br/>
+        label(for="status") Status:
+        select(name="status" , required)
+          - repeation = ['Open','In-progress','Closed']
+          each item in repeation
+            option(value='#{item}',selected = issue.status == item) #{item}
+        <br/><br/>
+        label(for="serverity") Serverity:
+        select(name="serverity",required)
+            - repeation = ['Minor','Major','Critical']
+            each item in repeation
+                option(value='#{item}',selected = issue.serverity == item) #{item}
+        <br/><br/>
+        label(for="createdDate") Created-Date:
+        input(type="date",name="createdDate", value='#{issue.createdDate}',required)
+        <br/><br/>
+        label(for="resolvedDate") Resolved-Date:
+        input(type="date",name="resolvedDate", value='#{issue.resolvedDate}',required)
+        <br/><br/>
+        input(type='submit', value='Update Issue')
+

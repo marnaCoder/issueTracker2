@@ -1,0 +1,32 @@
+doctype
+html
+  head
+    title Issue
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h3 Create Issue
+    #container
+      form(id='form', method='post', action='/issue/create')
+        label(for='description') Desciption:
+        textarea(rows=5,cols=80,name='description',required)
+        <br/><br/>
+        label(for="status") Status:
+        select(name="status" required)
+          option(value="Open") Open
+          option(value="In-progress") In-progress
+          option(value="Closed") Closed
+        <br/><br/>
+        label(for="serverity") Serverity:
+        select(name="serverity" required)
+          option(value="Minor") Minor
+          option(value="Major") Major
+          option(value="Critical") Critical
+        <br/><br/>
+        label(for="createdDate") Created-Date:
+        input(type="date",name="createdDate",required)
+        <br/><br/>
+        label(for="resolvedDate") Resolved-Date:
+        input(type="date",name="resolvedDate",required)
+        <br/><br/>
+        input(type='submit', value='Add Issue')
+

@@ -1,0 +1,36 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  background-color: rgb(239, 244, 247)
+
+}
+
+a {
+  color: #00B7FF;
+}
+h3{
+  text-align: center;
+  color: #00B7FF;
+}
+#container{
+text-align: center;
+}
+textarea{
+  border-color: rgb(218, 238, 247);
+}
+input[type="submit"]{
+  width:100px;
+  height: 100px !important;
+
+}
+table{
+  text-align: center;
+  width: 100%
+}
+tr{
+  color: rgb(2, 36, 49);
+}
+td{
+  color: rgb(38, 56, 63);
+}

@@ -1,0 +1,37 @@
+doctype
+html
+  head
+    title=Issue
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h3 View Issue
+    form(id='form', method='post', action='/issue/deleteMany')
+        table
+            tr
+                th
+                th Id
+                th Description
+                th Status
+                th Serverity
+                th Created-date
+                th Resolved-date
+            each item in issues
+                tr
+                td
+                    input(type="checkbox" name="#{item.id}")
+                td #{item.id}
+                td #{item.description}
+                td #{item.status}
+                td #{item.serverity}
+                td #{item.createdDate}
+                td #{item.resolvedDate}
+                td
+                    a(href='/issue/edit/#{item.id}') Edit
+                td
+                    a(href='/issue/delete/#{item.id}') Delete
+                <br/><br/>
+        <br/><br/>
+        input(type='submit', value='Delete Issue') 
+    p
+    #menu
+      a(href='/issue/create') Add new issue
